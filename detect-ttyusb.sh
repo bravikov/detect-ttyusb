@@ -9,7 +9,7 @@
 #[01.01.2013 20:20:08] remote ttyUSB0
 #[01.01.2013 20:20:10] remote ttyUSB1
 
-echo -e "\n exit: Ctrl+D \n"
+echo -e "\n exit: Ctrl+C \n"
 
 PREV_DEV_LIST=""
 while [ 1 ]
