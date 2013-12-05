@@ -4,12 +4,10 @@
 # автор: bravikov@gmail.com
 
 # Пример вывода:
-#[01.01.2013 20:20:01] new ttyUSB0
-#[01.01.2013 20:20:05] new ttyUSB1
-#[01.01.2013 20:20:08] remote ttyUSB0
-#[01.01.2013 20:20:10] remote ttyUSB1
-
-echo -e "\n exit: Ctrl+C \n"
+#[01.01.2013 20:20:01] Подключено ttyUSB0
+#[01.01.2013 20:20:05] Подключено ttyUSB1
+#[01.01.2013 20:20:08] Отключено ttyUSB0
+#[01.01.2013 20:20:10] Отключено ttyUSB1
 
 PREV_DEV_LIST=""
 while [ 1 ]
@@ -32,7 +30,7 @@ do
         
         if [ $NEW_DEV == yes ]
         then
-            echo [`date "+%x %X"`] new $DEV
+            echo [`date "+%x %X"`] Подключено $DEV
         fi
     done
     ###########################
@@ -53,7 +51,7 @@ do
         
         if [ $REMOTE_DEV == yes ]
         then
-            echo [`date "+%x %X"`] remote $PREV_DEV
+            echo [`date "+%x %X"`] Отключено $PREV_DEV
         fi
     done
     ##############################
