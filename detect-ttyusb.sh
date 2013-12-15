@@ -14,7 +14,7 @@ NOTIFY_SEND_SUMMARY="Слежение за устройствами ttyUSB*"
 PREV_DEV_LIST=""
 while [ 1 ]
 do
-    DEV_LIST="`ls /dev | grep ttyUSB`"
+    DEV_LIST="`ls /dev | grep 'ttyUSB\|ttyACM'`"
     
     ##### find new device #####
     for DEV in $DEV_LIST
