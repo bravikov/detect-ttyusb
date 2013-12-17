@@ -56,7 +56,7 @@ do
         if [ $REMOTE_DEV == yes ]
         then
             echo [`date "+%x %X"`] Отключено $PREV_DEV
-            NOTIFY_SEND_BODY="`date "+%x %X"`\nОтключено устройство\n/dev/$DEV"
+            NOTIFY_SEND_BODY="`date "+%x %X"`\nОтключено устройство\n/dev/$PREV_DEV"
             notify-send "$NOTIFY_SEND_SUMMARY" "$NOTIFY_SEND_BODY"
         fi
     done
