@@ -16,9 +16,6 @@
 #[01.01.2013 20:20:08] Отключено ttyUSB0
 #[01.01.2013 20:20:10] Отключено ttyUSB1
 
-
-NOTIFY_SEND_SUMMARY="Слежение за устройствами /dev/ttyUSB и /dev/ttyACM"
-
 DIR="/dev"
 
 PREV_DEV_LIST=""
@@ -43,8 +40,8 @@ do
         if [ $NEW_DEV == yes ]
         then
             echo [`date "+%x %X"`] Подключено $DEV
-            NOTIFY_SEND_BODY="`date "+%x %X"`\nПодключено устройство\n/dev/$DEV"
-            notify-send "$NOTIFY_SEND_SUMMARY" "$NOTIFY_SEND_BODY"
+            NOTIFY_SEND_SUMMARY="/dev/$DEV подключено"
+            notify-send "$NOTIFY_SEND_SUMMARY"
         fi
     done
     ###########################
@@ -66,8 +63,8 @@ do
         if [ $REMOTE_DEV == yes ]
         then
             echo [`date "+%x %X"`] Отключено $PREV_DEV
-            NOTIFY_SEND_BODY="`date "+%x %X"`\nОтключено устройство\n/dev/$PREV_DEV"
-            notify-send "$NOTIFY_SEND_SUMMARY" "$NOTIFY_SEND_BODY"
+            NOTIFY_SEND_SUMMARY="/dev/$PREV_DEV отключено"
+            notify-send "$NOTIFY_SEND_SUMMARY"
         fi
     done
     ##############################
